@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      $ = (parametr) => document.querySelector(parametr);
+   </script>
+</head>
+<body>
+   <h1 id='demo'></h1>
+   <h1 id='obj'></h1>
+
+   <script>
+      function Person(name,sname,age){
+         this.name = name ;
+         this.sname = sname ;
+         this.age = age;
+
+         this.getName = function(){
+            return this.name;
+         }
+
+         this.getSname = function(){
+            return this.sname;
+         }
+
+         this.getAge = function(){
+            return this.age;
+         }
+
+         this.setName = function(name){
+            this.name = name
+         }
+         this.setSname = function(sname){
+            this.sname = sname;
+         }
+         this.setAge = function(age){
+            this.age = age;
+         }
+         /*/
+            this = {
+               name: 'Elmar',
+               sname:  'Amanov',
+               age: 25,
+			   getName = function(){
+			     return this.sname;
+			   },
+			   getSname = function(){
+			     return this.sname;
+			   },
+			   getAge = function(){
+			     return this.sname;
+			   },
+			   setName = function(n){
+			     this.name = n;
+			   }
+			   setSname = function(s){
+			     this.sname = s;
+			   }
+			   setAge = function(a){
+			     this.Age = a;
+			   }
+            }
+
+            person = this //person get this object referans
+			person = {
+               name: 'Elmar',
+               sname:  'Amanov',
+               age: 25,
+			   getName = function(){
+			     return this.sname;
+			   },
+			   getSname = function(){
+			     return this.sname;
+			   },
+			   getAge = function(){
+			     return this.sname;
+			   },
+			   setName = function(n){
+			     this.name = n;
+			   }
+			   setSname = function(s){
+			     this.sname = s;
+			   }
+			   setAge = function(a){
+			     this.Age = a;
+			   }
+            }
+         /*/
+      }
+      let person = new Person('Elmar','Amanov',25);
+	  //let person1 = new Person('Elnur','Letifli',25);
+	  
+      $('#demo').innerHTML = 'Funuksiyadan Object--'+ 
+         person.getName() + ' ' + person.getSname() + ' '+ person.getAge()+'<br/>';
+
+      person.setName('Ruslan');  person.setSname('Adiyevn');  person.setAge(29);
+
+      $('#demo').innerHTML +='Funuksiyada Set işləmləri --' +  
+         person.getName() + ' ' + person.getSname() + ' '+ person.getAge();
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      class personObject  {
+         constructor(name,sname,age){
+            this.name = name ;
+            this.sname = sname ;
+            this.age = age;
+         }
+
+         getName = function(){
+            return this.name;
+         }
+
+         getSname(){
+            return this.sname;
+         }
+
+         getAge(){
+            return this.age;
+         }
+
+         setName(name){
+            this.name = name
+         }
+
+         setSname(sname){
+            this.sname = sname;
+         }
+
+         setAge(age){
+            this.age = age;
+         }
+         /*/
+            this = {
+               name: 'Elmar',
+               sname:  'Amanov',
+               age: 25,
+               getName{ return this.name},
+               getSname{ return this.name},
+               getAge{ return this.name},
+
+               setName(n){ this.name = n},
+               setSsame(s){ this.sname = s},
+               setAge(a){ this.age = a}
+            }
+
+            personOne = this //personOne get this object referans
+
+            personObj = {
+               name: 'Elmar',
+               sname:  'Amanov',
+               age: 25,
+               getName{ return this.name},
+               getSname{ return this.name},
+               getAge{ return this.name},
+
+               setName(n){ this.name = n},
+               setSsame(s){ this.sname = s},
+               setAge(a){ this.age = a}
+            }
+         /*/
+         
+      }
+
+
+     
+      let personOne = new personObject('Eldar','Amanov',24);
+     
+      
+
+      $('#obj').innerHTML = 'Classdan Object--'+ 
+      personOne.getName() + ' ' + personOne.getSname() + ' '+ personOne.getAge()+'<br/>';
+
+      personOne.setName('Ruslan');  personOne.setSname('Adiyevn');  personOne.setAge(29);
+
+      $('#obj').innerHTML += 'Class Set işləmləri--'+ 
+      personOne.getName() + ' ' + personOne.getSname() + ' '+ personOne.getAge()+'<br/>';
+   </script>
+</body>
+</html>
